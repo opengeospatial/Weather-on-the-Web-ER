@@ -35,6 +35,7 @@ All questions regarding this document should be directed to the editor or the co
 |Frédéric Guillaud | Météo-France | Editor/Contributor
 |Mark Burgoyne | UK Met Office | Contributor
 |Pete Trevelyan | UK Met Office | Contributor
+|Roope Tervo | FMI | Contributor
 |====================
 
 
