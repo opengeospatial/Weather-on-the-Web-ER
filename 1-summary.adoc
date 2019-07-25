@@ -1,6 +1,6 @@
 == Subject
 
-This Engineering Report concerns the development and implementation of Weather-on-the-Web APIs for meteorological web-based data services. The work was done under the auspices of the OGC Met Ocean Domain Working Group.
+This Engineering Report concerns the development and implementation of Weather-on-the-Web APIs for meteorological and oceanographic web-based data services. The work was done under the auspices of the OGC Met Ocean Domain Working Group.
 
 == Executive Summary
 
@@ -12,7 +12,7 @@ Globally standardized data service APIs will enable greater access to important 
 
 It also envisage that the APIs will enable both advanced countries and the Least Developed Countries cotribute to global strategic intiatives of sustainability and development, using both public and private approaches.
 
-No one country is capable of supplying forecast data at the highest useful resolutions for the whole globe, so a distibuted scalable approrach is essential.
+No one country is capable of supplying forecast data at the highest useful resolutions for the whole globe, so a distibuted scalable approach is essential.
 
 By using stable, standardised, service APIs based on simple data retrieval patterns, it is envisaged that the use of meteorological and oceanographic data and information will be enabled in other different domains, including geospatial, enabling more innovation and value.
 
