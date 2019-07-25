@@ -7,7 +7,7 @@ Attention is drawn to the possibility that some of the elements of this document
 
 Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.
 
-# Overview
+# Overview of Weather on the Web API Engineering Report
 This is a template for the Weather on the Web API Engineering Report, based on the latest OGC template for Engineering Reports. 
 
 Please do not modify files index.adoc, 0-preface.adoc, asciidoctor.css, and all files in folder _resources_ . 
@@ -43,4 +43,5 @@ Command for HTML output:
 asciidoctor -a stylesheet=rocket-panda.css -a stylesdir=./resources/stylesheets -r asciidoctor-bibtex er.adoc
 
 =============
+
 This [User Guide](http://www.methods.co.nz/asciidoc/userguide.html) might be helpful to authors.
