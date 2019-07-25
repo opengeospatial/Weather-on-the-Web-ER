@@ -1,17 +1,20 @@
 == Subject
-(( The following is, as all texts in double parentheses, a helper text. Please remove this and all other helper texts once done. ))
 
-(( The Subject clause shall define without ambiguity the topic of this document and the aspect(s) covered. It shall be succinct so that it can be used as a text for bibliographic purposes. ))
-
-(( This section shall be between 2-3 sentences and not longer than 140 words total.))
+This Engineering Report concerns the development and implementation of Weather-on-the-Web APIs for meteorological web-based data services. The work was done under the auspices of the OGC Met Ocean Domain Working Group.
 
 == Executive Summary
 
-(( The following is, as all texts in double square brackets, a helper text. Please remove this and all other helper texts once done. ))
+The data retrieval patterns to access weather and climate data have been stable for many years. Such patterns include, but are not restricted to, point data, time-series at a point, vertical profiles, trajectories (whether in 2, 3 or 4 dimensions), polygons, or rectangular tiles. 
 
-(( The Executive Summary clause shall contain the key findings and results in a concise form. A more detailed description of the findings should be in the body of the report. ))
+Long established domain-specific use cases, several workshops, hackathons and proof-of-concept implementations have identified simple 'convenience' query patterns for non-expert users of environmental data. These are described.
 
-(( The Executive Summary shall contain a business value statement that should describe the value of this Engineering Report to improve interoperability, advance location-based technologies or realize innovations. ))
+Globally standardized data service APIs will enable greater access to important data and information by a very wide range of users and applications. The data may be time critical from short range forecasts that are only useful for an hour or so, or the data may be from long term archives with long term validity. It is envisaged that the services will be highly scalable to very many users, and will be applicable to both traditional and cloud based IT systems.
+
+It also envisage that the APIs will enable both advanced countries and the Least Developed Countries cotribute to global strategic intiatives of sustainability and development, using both public and private approaches.
+
+No one country is capable of supplying forecast data at the highest useful resolutions for the whole globe, so a distibuted scalable approrach is essential.
+
+By using stable, standardised, service APIs based on simple data retrieval patterns, it is envisaged that the use of meteorological and oceanographic data and information will be enabled in other different domains, including geospatial, enabling more innovation and value.
 
 (( This section shall include precise descriptions of the requirements that have been addressed by the work documented in this Engineering Report; together with the research motivation that answers the fundamental question: What motivated us to address this topic in this report? ))
 
@@ -27,8 +30,12 @@ All questions regarding this document should be directed to the editor or the co
 [width="80%",options="header",caption=""]
 |====================
 |Name |Organization | Role
-|((Full Name)) | (( from org )) | ((Editor/Contributor))
-|((Full Name)) | ((from org)) |((Editor/Contributor))
+|Chris Little | UK Met Office | Editor/Contributor
+|Steve Olson | US National Weather Service |Editor/Contributor
+|Frédéric Guillaud | Météo-France | Editor/Contributor
+|Mark Burgoyne | UK Met Office | Contributor
+|Pete Trevelyan | UK Met Office | Contributor
+|Roope Tervo | FMI | Contributor
 |====================
 
 
