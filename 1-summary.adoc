@@ -34,8 +34,12 @@ All questions regarding this document should be directed to the editor or the co
 |Steve Olson | US National Weather Service |Editor/Contributor
 |Frédéric Guillaud | Météo-France | Editor/Contributor
 |Mark Burgoyne | UK Met Office | Contributor
-|Pete Trevelyan | UK Met Office | Contributor
+|Paul Hershberg | US National Weather Service | Contributor
+|Tom Kralidis | Environment Canada | Contributor
+|Jürgen Seib | Deutscher Wetterdienst | Contributor
 |Roope Tervo | FMI | Contributor
+|Pete Trevelyan | UK Met Office | Contributor
+
 |====================
 
 
