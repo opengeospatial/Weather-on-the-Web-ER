@@ -16,9 +16,9 @@ Most content will be in file er.adoc. The file er.adoc has instructions in the f
 
 The process is for editors to check out ('make a branch') and begin editing it with a tool such as e.g. Atom editor and Asciidoctor conversion tool. There are detailed instructions, installation info, and syntax recommendations in the template _.adoc_ files.
 
-Then the finhsed changes can be checked back in and committed, and the 'Pull Request' merged into the master copy/branch by those with the appropriate rights.
+Then the finished changes can be checked back in and committed, and the 'Pull Request' merged into the master copy/branch by those with the appropriate rights.
 
-It is very important that the name of the file er.adoc does not change, otherwise the scripts to convert all ERs will fail! Ideally, you only name
+It is very important that the name of the file er.adoc does not change, otherwise the scripts to convert all ERs will fail! Ideally, you only change
 
 * er.adoc
   * preface.adoc (Do not change this)
