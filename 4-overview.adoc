@@ -10,12 +10,14 @@ This 4-overview.adoc file helps the reader to better understand the various sect
 
 (( Example: ))
 
-(( Section 5 introduces the problem of vector tiling. It describes the situation prior to the testbed and discusses the requirements set by the sponsors. ))
+(( Section 5 introduces the simple uses cases or scenrios for the use of basic meteorological data patterns. ))
 
-(( Section 6 discusses the mathematical model behind the various tiling strategies. It provides recommendations on preferred strategies. ))
+(( Section 6 outline the various hackathons, implemnetations and experiments to date. ))
 
-(( Section 7 presents the solution developed in this testbed. A clear mapping of requirements to solutions is provided. The section shows additional work is required to implement 3D tiles, which could not be addressed in this activity. ))
+(( Section 7 presents some of the problems encountered and their resolutions. ))
 
-(( Section 8 provides a summary of the main findings and discusses links to other tasks such as WFS 3.0 and WMTS 2.3. ))
+(( Section 8 provides a summary of the main findings and discusses links to other tasks such as WFS 3.0 in OGC and WMO. ))
 
-(( Annex A provides code snippets that illustrate the functionality of the Vector Tiling Engine and shall help to implement similar technology. It briefly discusses the key issues we experienced during implementation.))
+(( Section 9 proposesthe way forward and the future tasks. ))
+
+(( Annex A provides code snippets that illustrate the functionality. ))
