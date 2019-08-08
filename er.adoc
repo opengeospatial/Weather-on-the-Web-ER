@@ -37,7 +37,7 @@
 // The title here should match the title on the first page.
 // *****************************************************************************
 
-:title: OGC Testbed-14:
+:title: OGC Weather on the Web API Engineering Report:
 
 // *****************************************************************************
 // Document identifier, with format "OGC YY-nnn" (e.g., OGC 17-067).
@@ -45,25 +45,25 @@
 // https://portal.opengeospatial.org/?m=public&subtab=request&tab=1.
 // *****************************************************************************
 
-:docReference: OGC XX-XXX
+:docReference: OGC 19-056
 
 // *****************************************************************************
 // Date posted to OGC Portal>Pending Documents, with format: yyyy-mm-dd.
 // *****************************************************************************
 
-:submissionDate: YYYY-MM-DD
+:submissionDate: 2019-MM-DD
 
 // *****************************************************************************
 // Names of all editors, comma-separated (e.g., John Doe, Sue Smith)
 // *****************************************************************************
 
-:editor: Name(s)
+:editor: Chris Little, Steve Olson, Frédéric Guillaud, Mark Burgoyne, Pete Trevelyan
 
 // *****************************************************************************
 // Proposed working group for review (e.g. Architecture DWG, WCS SWG)
 // *****************************************************************************
 
-:workingGroup: SWG/DWG for Review: Name(s)
+:workingGroup: SWG/DWG for Review: Met Ocean DWG
 
 // *****************************************************************************
 // End of Editor's front-matter elements.
@@ -74,10 +74,10 @@
 // Editors please do not alter the administrative front matter below.
 // *****************************************************************************
 :category: OGC Public Engineering Report
-:publicationDate: YYYY-MM-DD
+:publicationDate: 2019-MM-DD
 :approvalDate: YYYY-MM-DD
 :referenceURLID: ID
-:copyrightYear: 2018
+:copyrightYear: 2019
 //
 :titletext: {title}
 :doctype: book
