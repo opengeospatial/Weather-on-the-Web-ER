@@ -10,7 +10,7 @@ Long established domain-specific use cases, several workshops, hackathons and pr
 
 Globally standardized data service APIs will enable greater access to important data and information by a very wide range of users and applications. The data may be time critical from short range forecasts that are only useful for an hour or so, or the data may be from long term archives with long term validity. It is envisaged that the services will be highly scalable to very many users, and will be applicable to both traditional and cloud based IT systems.
 
-It also envisage that the APIs will enable both advanced countries and the Least Developed Countries cotribute to global strategic intiatives of sustainability and development, using both public and private approaches.
+It also envisage that the APIs will enable both advanced countries and the Least Developed Countries contribute to global strategic intiatives of sustainability and development, using both public and private approaches.
 
 No one country is capable of supplying forecast data at the highest useful resolutions for the whole globe, so a distibuted scalable approach is essential.
 
