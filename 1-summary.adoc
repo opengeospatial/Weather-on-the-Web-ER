@@ -4,17 +4,19 @@ This Engineering Report concerns the development and implementation of Weather-o
 
 == Executive Summary
 
-The data retrieval patterns to access weather and climate data have been stable for many years. Such patterns include, but are not restricted to, point data, time-series at a point, vertical profiles, trajectories (whether in 2, 3 or 4 dimensions), polygons, or rectangular tiles. 
+The data retrieval patterns to access weather and climate data have been stable for many years. Such patterns include, but are not restricted to, point data, time-series at a point, vertical profiles, trajectories (whether in 2, 3 or 4 dimensions), polygons, or rectangular tiles.
 
 Long established domain-specific use cases, several workshops, hackathons and proof-of-concept implementations have identified simple 'convenience' query patterns for non-expert users of environmental data. These are described.
 
 Globally standardized data service APIs will enable greater access to important data and information by a very wide range of users and applications. The data may be time critical from short range forecasts that are only useful for an hour or so, or the data may be from long term archives with long term validity. It is envisaged that the services will be highly scalable to very many users, and will be applicable to both traditional and cloud based IT systems.
 
-It also envisage that the APIs will enable both advanced countries and the Least Developed Countries contribute to global strategic intiatives of sustainability and development, using both public and private approaches.
+It also envisage that the APIs will enable both advanced countries and the Least Developed Countries contribute to global strategic initiatives of sustainability and development, using both public and private approaches.
 
-No one country is capable of supplying forecast data at the highest useful resolutions for the whole globe, so a distibuted scalable approach is essential.
+No one country is capable of supplying forecast data at the highest useful resolutions for the whole globe, so a distributed scalable approach is essential.
 
 By using stable, standardised, service APIs based on simple data retrieval patterns, it is envisaged that the use of meteorological and oceanographic data and information will be enabled in other different domains, including geospatial, enabling more innovation and value.
+
+Designing such standard involve, however, a great deal of balancing between domain-specific feature-rich API and widely supported, but less capable, general API. This balancing becomes especially critical for use cases with simple output, such as a single point in space and time or time series in one location, since in these cases users may be assumed to have less expertise in the environmental domain. 
 
 (( This section shall include precise descriptions of the requirements that have been addressed by the work documented in this Engineering Report; together with the research motivation that answers the fundamental question: What motivated us to address this topic in this report? ))
 

@@ -1,0 +1,116 @@
+
+
+== Use Case 1. Open Data Developer, Time Series
+
+User searches for next days weather forecast to create a calendar subscription feed.
+
+=== Actors
+
+Developer who is experienced in web technologies but have no preliminary knowledge of geospatial APIs or environmental data usage.
+
+=== Preconditions
+
+* Developer is familiar with at least OpenAPI3 and WFS3
+* Developer knows weather parameters, location and time range of interest
+
+=== Process
+
+. The developer gets familiar with API and its providing
+. The developer searches appropriate library and integrates it to the software
+. The developer defines point and time range of interest
+. The library takes care of requesting and retrieving the data
+. The developer decorates the output to the software
+
+=== Required Input Details
+
+- API address
+- Weather parameter(s) name
+- Coordinates of location of interest
+- Time range of interest
+
+=== Output Format
+
+JSON containing time series of requested parameter with minimal meta data (location, time, unit).
+
+=== Related Requirements
+
+* Libraries to exist
+
+
+
+
+== Use Case 2. Open Data Developer, Single Time
+
+User searches for next days weather forecast to create a calendar subscription feed.
+
+=== Actors
+
+Developer who is experienced in web technologies but have no preliminary knowledge of geospatial APIs or environmental data usage.
+
+=== Preconditions
+
+* Developer is familiar with at least OpenAPI3 and WFS3
+* Developer knows weather parameters, location and time of interest
+
+=== Process
+
+. The developer gets familiar with API and its providing
+. The developer searches appropriate library and integrates it to the software
+. The developer defines point and time of interest
+. The library takes care of requesting and retrieving the data
+. The developer decorates the output to the software
+
+=== Required Input Details
+
+- API address
+- Weather parameter(s) name
+- Coordinates of location of interest
+- Time of interest
+
+=== Output Format
+
+JSON containing values of requested parameter with minimal meta data (location, time, unit).
+
+=== Related Requirements
+
+* Libraries to exist
+
+
+
+
+
+== Use Case 3. Open Data Developer, Data Explorer
+
+The user wants to get sense of values in the data.
+
+=== Actors
+
+Developer who is experienced in web technologies but have no preliminary knowledge of geospatial APIs or environmental data usage.
+
+=== Preconditions
+
+* Developer is familiar with at least OpenAPI3 and WFS3
+* Developer knows weather parameters, area of interest
+* Developer have QGIS or similar installed
+
+=== Process
+
+. The developer finds API endpoint
+. The developer open QGIS desktop application
+. The developer enter API endpoint and select the dataset (collection) of interest
+. QGIS show data values in 100 points spread regularly to the data area
+. User may zoom in and out while getting always 100 points inside shown area
+
+=== Required Input Details
+
+- API address
+- Collection name
+- Weather parameter(s) name
+
+=== Output Format
+
+API output is a 100 features which forms a regular grid in requested area. QGIS visualise the data to the user.
+
+=== Related Requirements
+
+* QGIS _OGC API - Features Core_ (WFS3) support

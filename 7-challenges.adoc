@@ -1,0 +1,67 @@
+
+
+== API Interoperability
+
+=== SOFP WFS3 Weather Server
+
+To gain maximal interoperability, the defined API should be as general as possible. The general parts empower existing libraries and software to communicate with the API. Excessively general design, however, present unnecessary confusion since the API is not intuitive and/or it works in an inconsistent manner.
+
+_SOFP WFS3 Weather Server_ were build to fully meet _OGC API - Features Core_ to gain maximal client support and easy access to the data to developers outside geospatial community. Following challenges and shortcomings in the current standard were identified.
+
+==== Simple Observation Time Series
+
+To request all temperature and humidity observations from a time range inside given area, following request could be used:
+
+ GET /datasets/weather/observation/aws/items?
+   parametername=Temperature,Humidity
+   &time=20181204T150000/20181204T180000
+   &bbox=20,60,30,70
+
+The request is _OGC API - Features Core_ compatbile except of the time definition, which would need an extension. Time range support is a widely adopted in broad range of applications and would be reasonable to define in _OGC API - Features_ standard. However, other time definitions used in many environmental domains such as origin time and lead time are not commonly recognised and would require a domain specific specification.
+
+==== Resampled Weather Forecast Model Output
+
+To request a weather model output inside some area, following request could be used:
+
+ GET /datasets/weather/forecast/harmonie/items?
+   parametername=Temperature,Humidity
+   &time=20181204T150000/20181204T180000
+   &bbox=20,60,30,70
+   &limit=100
+
+The request returns a collection of features containing a resampled regular grid with 100 points (10x10) inside given bounding box. All features are resampled and generated on-demand based on the request. Smaller bounding box would return more detailed information and larger one less detailed. The pattern is fully compatible with _OGC API - Features Core_ but may be unintuitive to the users used to handle pre-existing features.
+
+==== Single Point Weather Forecast Model Output
+
+_SOFP WFS3 Weather Server_ allows users to request any single point as well. In those cases, it interpolate the response on-demand to the exact requested location in space and time. The functionality is achieved with a (mis)usage of standard filtering defined in _OGC API - Features Core_:
+
+ GET /datasets/weather/forecast/harmonie/items?
+   parametername=Temperature,Humidity
+   &time=20181204T150000/20181204T180000
+   &bbox=20,60,30,70
+   &lat=60.159900&lon=24.876116
+
+The pattern is fully Core-compatible but clients are allowed to request _any_ latitude and longitude inside data area. The upside of such behaviour is a wide client support and the downside is a possibly obscurity. The functionality can of course be described to the developers in OpenAPI definition and API can be extended with query parameters such as _interpolation_method_, but the main concern in balance between interpretability and clarity.
+
+== Data Format
+
+=== OGC Observations and Measurements - Simple Feature model & encodings (OMSF)
+
+TBD
+
+== Other Notes
+
+=== Feature IDs
+
+_OGC API - Features_ standard assumes that all features have a unique identifier, which may be problematic if responses are generated on-demand (for example in _SOFP WFS3 Weather Server_). In case of weather forecasts, IDs can be formed in a unique manner on-demand following:
+
+ parameter:producer:level_type:level:forecast_type:ensemble_number:origin_time:area:time:area_interpolation_method:time_interpolation_method:level_interpolation_method
+
+This convention makes the feature ID to a query language itself, which may be beneficial for power users.
+
+=== Forming Collections
+
+_OGC API - Features_ leaves relatively lot degree of freedom to form collections in different ways. To serve wide range of domains, this is naturally necessary. In more specific domain, such as serving weather data, different conventions may be confusing to the end users. It would be advisable to harmonise at least following aspects:
+
+- One collection per weather model or one collection per parameter?
+- One entry point per organisation or on entry point per dataset (i.e. weather model) or one entry point per data type (i.e. observations/forecast/climatology)?
