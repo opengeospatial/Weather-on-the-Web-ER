@@ -16,7 +16,7 @@ Developer who is experienced in web technologies but have no preliminary knowled
 === Process
 
 . The developer gets familiar with API and its providing
-. The developer searches appropriate library and integrates it to the software
+. The developer searches the appropriate library and integrates it to the software
 . The developer defines point and time range of interest
 . The library takes care of requesting and retrieving the data
 . The developer decorates the output to the software
@@ -25,12 +25,12 @@ Developer who is experienced in web technologies but have no preliminary knowled
 
 - API address
 - Weather parameter(s) name
-- Coordinates of location of interest
-- Time range of interest
+- Coordinates of the location of interest
+- The time range of interest
 
 === Output Format
 
-JSON containing time series of requested parameter with minimal meta data (location, time, unit).
+JSON containing time series of the requested parameter with minimal metadata (location, time, unit).
 
 === Related Requirements
 
@@ -55,7 +55,7 @@ Developer who is experienced in web technologies but have no preliminary knowled
 === Process
 
 . The developer gets familiar with API and its providing
-. The developer searches appropriate library and integrates it to the software
+. The developer searches the appropriate library and integrates it to the software
 . The developer defines point and time of interest
 . The library takes care of requesting and retrieving the data
 . The developer decorates the output to the software
@@ -64,12 +64,12 @@ Developer who is experienced in web technologies but have no preliminary knowled
 
 - API address
 - Weather parameter(s) name
-- Coordinates of location of interest
+- Coordinates of the location of interest
 - Time of interest
 
 === Output Format
 
-JSON containing values of requested parameter with minimal meta data (location, time, unit).
+JSON containing values of the requested parameter with minimal metadata (location, time, unit).
 
 === Related Requirements
 
@@ -81,7 +81,7 @@ JSON containing values of requested parameter with minimal meta data (location, 
 
 == Use Case 3. Open Data Developer, Data Explorer
 
-The user wants to get sense of values in the data.
+The user wants to get a sense of values in the data.
 
 === Actors
 
@@ -97,7 +97,7 @@ Developer who is experienced in web technologies but have no preliminary knowled
 
 . The developer finds API endpoint
 . The developer open QGIS desktop application
-. The developer enter API endpoint and select the dataset (collection) of interest
+. The developer enters API endpoint and selects the dataset (collection) of interest
 . QGIS show data values in 100 points spread regularly to the data area
 . User may zoom in and out while getting always 100 points inside shown area
 
@@ -109,7 +109,7 @@ Developer who is experienced in web technologies but have no preliminary knowled
 
 === Output Format
 
-API output is a 100 features which forms a regular grid in requested area. QGIS visualise the data to the user.
+API output is a 100 features which form a regular grid in the requested area. QGIS visualise the data to the user.
 
 === Related Requirements
 
