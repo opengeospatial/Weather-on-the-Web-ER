@@ -27,3 +27,39 @@ The server is implemented with NodeJS and TypeScript. The server architecture is
 
 |OMSF profile repository
 |https://github.com/opengeospatial/omsf-profile
+|===
+
+
+=== Met Office candidate specification demonstrator
+
+The Met Office has developed a basic prototype to test the proposed candidate specification, this prototype had two main aims:
+
+ - Demonstrate accessing data from a variety of datasources which include both Feature and Coverage types.
+
+ - Test the idea that users would be able to retrieve data with no  information other than that provided by the OpenAPI definition of the candidate API specification. 
+
+The prototype was limited to just the basic Point and Polygon queries and limited to just one output format.  No attempt was made to make the prototype scalable as the focus was on providing access to a variety of datasources rather than query optimisation.
+
+The server was developed using python due to the wide range of software libraries available for accessing scientific datasources.  To simplify the deployment process the application was built as a docker container, resources provided for the container were limited (1 CPU core and <6Gb or ram) in order to help identify possible resource bottlenecks.
+
+One of the main aims of the candidate specification is to abstract the user from the underlying data structures, to test the concept the following underlying datasets were used as datasources:
+
+- METAR Observation data (feature)
+- UK Met Office UKV Model (UKV) surface data (coverage)  
+- UK Met Office Global Model surface data (coverage)
+- NOAA Global Forecast System (GFS) 0.25 degree data (coverage)
+- NWS National Digital Forecast Database (NDFD) (coverage) 
+
+A variety of storage options were used for the coverage datasets, although initially driven but the data volumes it helped to further demonstrate the advantages of abstraction.  UKV and NDFD data were stored as files on the server file system, the UK Global model files were stored and accessed from Amazon S3 buckets and the GFS data was accessed using a Unidata Threads server (but not via the WCS endpoint).
+
+Utilising existing Python software libraries for querying the data from these sources proved to be relatively straightforward, the majority of custom code was required to convert the data structures returned by the libraries into CoverageJSON.  
+
+The limited range of values accepted as inputs used by the query parameters also helped to simplify the server implementation. The most complicated input parameters were the COORDS and time, but the use of Well Known Text (WKT) and ISO8601 standards meant it was possible to use existing software libraries for parsing and validation of those values. As the only valid inputs for the remaining parameters are values that are supplied in the metadata returned by the API, the validation code could rely a simple comparison to the expected value list.
+
+A core principle of the candidate specification is to create an API which can be fully described by the OpenAPI 3.0 standard. As well as tools that produce developer friendly documentation, there are tools which will generate skeleton code in multiple languages; This code generates queries against the API and parses the results returned, this proved very useful in testing that the implementation performed as described by the OpenAPI definition.
+ 
+An internal hackathon was held on the 20/08/2019 as a first test of the assumptions made for the candidate specification approach,  the attendees where a mix of full time software developers and scientists who develop code to advance areas of their research.  The full time software developers were a mix of back end developers with some experience of the existing OGC standards (WFS and WCS) and front end developers who were used to more basic API’s provided by the big internet mapping providers, in general the scientists were used to working directly with the datasets rather than web services when accessing information.  In order to test the experience of an external user with the API this was the first exposure of those involved in the hackathon with the candidate specification and the only information that they had access to was the information provided by the API itself (and it’s OpenAPI specification). Despite the limitations and implementation errors (mainly incorrect metadata descriptions and OpenAPI documentation errors) in the API prototype both groups (developers and scientists) were able to build basic time series applications in a variety of technologies.
+
+The approach the two groups took too discovering how to use the API was very different, the developers worked with the OpenApi endpoint utilising the HTML page to investigate the API’s functionality.  In general the scientists started with the API home page and followed the links available in the returned data and would probably have struggled to actually build a data query from the available information but the prototype API returned a map based query interface if the user didn’t specify any query parameters; this map based interface (which had been built for testing purposes) provided an easy to use method of building example data queries.  
+
+Whilst those involved in the hackathon were able to build applications against the API they did identify several areas where improvements were needed.

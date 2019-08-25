@@ -65,3 +65,85 @@ _OGC API - Features_ leaves relatively lot degree of freedom to form collections
 
 - One collection per weather model or one collection per parameter?
 - One entry point per organisation or on entry point per dataset (i.e. weather model) or one entry point per data type (i.e. observations/forecast/climatology)?
+
+== Issues identified with the candidate specification during the hackathon 
+
+==== Use the home page / API root as a help / guidance page
+
+Whilst a lot of the information that the users struggled to find was available from the conformance and API endpoints, the terms were new to the users of the API.  A richer set of explanations and descriptions on the API home page would be useful (This was more a limitation of prototype than the specification).
+
+==== Better descriptions for the meanings of Group/Collection/Instance
+
+Another artefact of an API that is abstracting the user from the underlying source is that the aggregation terms by their nature have little to do with the data itself.  It is therefore essential that the returned information provides an explanation of the reasons and meaning of the aggregations. 
+
+- Improve descriptions and use JSON-LD to provide links to more detailed information
+
+==== Easier discovery of available data parameters
+
+Finding the required information proved to be awkward, currently a user has to investigate the metadata for each collection individually to find what information is available via the service.  A ability to search and filter by the information (parameters/features) available would simplify the process, this would also need to return the metadata about any spatial and temporal differences in the parameters. 
+
+- Create groups based on available parameters
+- Add an API endpoint for the discovery of parameters
+ 
+
+==== Ability to filter available collections by spatial/temporal coverage
+
+This functionality was missing from the prototype, but the ability to filter the available collections by time and area was considered important.
+
+- Add time and bbox query parameters to the meteadata queries
+
+==== Custom metadata
+
+A need was identified to be able to return metadata that was specific for a collection type.  Although all users appreciated the ability to utilise the same query patterns and data parsers to handle different types of data, there are occasions when necessary metadata that cannot be mapped to a generic patten.  The instance metadata reponse needs to have a facility to include metadata that does not fit into the generic core response.
+
+- This might be solved by having optional sections based on the structure of the underlying data (i.e. Feature or Coverage).
+
+==== Use of Well Known Text
+
+The use of Well Known Text (WKT) for describing the query coordinates did not cause any issues, but a question was raised about the differences in approach to using WKT between the current API type definitions. Currently the Point and Polygon types do not use WKT for the Time and Level query parameters where as the Trajectory query does.  
+
+Point instance request:
+[source]
+----
+GET /collections/gfs_025_time-height_above_ground-lat-lon/latest/point/coords=POINT(-3.2 51.2)&time=2019-08-25T03:00:00Z&z=2.0&output_format=application/json
+----
+Point timeseries request:
+[source]
+----
+GET /collections/gfs_025_time-height_above_ground-lat-lon/latest/point/coords=POINT(-3.2 51.2)&time=2019-08-25T03:00:00Z/2019-08-25T15:00:00Z&z=2.0&output_format=application/json
+----
+Polygon instance request:
+[source]
+----
+GET /collections/gfs_025_time-height_above_ground-lat-lon/latest/polygon/coords=POLYGON((-15 48.8 500,-15 60.95 500,5 60.85 500,5 48.8 500,-15 48.8 500))&time=2019-08-25T03:00:00Z&z=2.0&output_format=application/json
+----
+Polygon timeseries request:
+[source]
+----
+GET /collections/gfs_025_time-height_above_ground-lat-lon/latest/polygon/coords=POLYGON((-15 48.8 500,-15 60.95 500,5 60.85 500,5 48.8 500,-15 48.8 500))&time=2019-08-25T03:00:00Z/2019-08-25T03:00:00Z&z=2.0&output_format=application/json
+----
+Trajectory request:
+[source]
+----
+GET /collections/gfs_025_time-isobaric-lat-lon/latest/trajectory/coords=LINESTRING(53.33 4.76 1000 1560507000,51.90 3.17 400 1560507600,51.8 2.24 400 1560508200,50.74 -3.48 0 1560508500,51.75 2.20 500 1560510240,51.69 1.41 800 1560510960,51.49 0.48 1000 1560511560)&output_format=application/json
+----
+
+==== Links section 
+
+The links section caused problems when developing code to parse the metadata with developers having to add logic to avoid getting stuck in recursive loops.  Most would have preferred to use the Restful approach of content negotiation to achieve the same effect.
+
+==== Verbosity 
+
+The number of navigation steps and levels in the API was raised by some of the developers, but they did accept that several of the steps could be skipped once a user had identified the collection that gave the required data.  
+
+- This issue could also be reduced by providing a better discovery process for data parameters.
+
+==== Combination of Multiple and Single requests
+
+Whilst the ability to request multiple points (and multiple polygons) with a single request was seen as useful, the JSON schema of the data returned was different (MultiPoint and MultiPolygon return coverage collections) and not correctly described by the OpenApi documentation.  
+
+- This could be resolved by splitting the requests out into separate individual location and multiple location query types.
+
+===== Data format
+
+The prototype only supported coverageJSON as an output format and all involved in the hackathon were able to parse the results returned but this was a very limited test and in the time available the users were only able to utilise the point query timeseries results so further evaluation is required.
