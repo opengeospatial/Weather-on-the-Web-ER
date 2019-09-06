@@ -65,3 +65,15 @@ _OGC API - Features_ leaves relatively lot degree of freedom to form collections
 
 - One collection per weather model or one collection per parameter?
 - One entry point per organisation or on entry point per dataset (i.e. weather model) or one entry point per data type (i.e. observations/forecast/climatology)?
+
+== Meteorological Service of Canada GeoMet OGC API
+
+The OGC API - Features Core specification provides a valuable developer experience and lowers the barrier to interacting with geosaptial data.  Below are some considerations for further research and collaboration.
+
+=== Hierarchy
+
+The current MSC OGC API offering provides a flat list of collections.  Community input and consensus will provide value into better organizing and categorizing collection trees which will help with user navigation of the API.
+
+=== Complex Filtering
+
+By design, the OGC API - Features Core specification provides query capability via spatial, aspatial and temporal predicates.  More complex query capabilities (spatial operators [clip by polygon, etc.], comparisons [greater than, less than, etc.], as well as logical operators [And/Or/Not, etc.]) are required for more complex use cases.  This is best implemented as an extension that a given server can implement/conform to.
