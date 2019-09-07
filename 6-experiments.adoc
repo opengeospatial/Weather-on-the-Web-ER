@@ -27,3 +27,29 @@ The server is implemented with NodeJS and TypeScript. The server architecture is
 
 |OMSF profile repository
 |https://github.com/opengeospatial/omsf-profile
+|===
+
+=== Meteorological Service of Canada GeoMet OGC API
+
+In support of the https://canada.ca/climate-services[Canadian Centre for Climate Services] (CCCS), the Meteorological Service of Canada (MSC), as part of their https://www.canada.ca/en/environment-climate-change/services/weather-general-tools-resources/weather-tools-specialized-data/geospatial-web-services.html[GeoMet] platform, deployed an initial offering of weather, climate and water data via the OGC API - Features standard.  Made available in 2018, initial datasets included historical hydrometric and climate data.
+
+Data was encoded as GeoJSON and was also provided via HTML representation.  The API was used as part of the CCCS https://climate-change.canada.ca/climate-data/[Climate data extraction tool], allowing users to visualize and access/download archive data with spatial, aspatial and temporal criteria for just in time data extraction of data relevant to their use case.  Future phases of the API will include real time weather observations and hydrometric data.  The API is also used for climate data extraction via the recently launched collaborative portal at https://climatedata.ca[ClimateData.ca].
+
+The server is implemented with in Python with https://pygeoapi.io[pygeoapi] and provides a robust plugin architecture for extensibility.  Supported backends include Elasticsearch, PostgreSQL/PostGIS and GeoPackage.
+
+[%header,cols=2*]
+|===
+|Content
+|Link
+
+|OGC API - Feature endpoint
+|https://geo.weather.gc.ca/geomet/features
+
+|Source code
+|https://github.com/geopython/pygeoapi
+
+|Website
+|https://pygeoapi.io
+|===
+
+
