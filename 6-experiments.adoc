@@ -79,4 +79,42 @@ The server is implemented with in Python with https://pygeoapi.io[pygeoapi] and 
 |https://pygeoapi.io
 |===
 
+=== Met Office candidate specification demonstrator
 
+The proposed candidate specification takes a very different (and hopefully complimentary) approach to working with geospatial data to the existing OGC API's.  Rather than focusing and providing rich query interfaces to expose the information available from the underlying datasets, the specification focuses on a small set of standard query patterns which treats all data as geo-temporally referenced data values with a consistent approach to the metadata which describes what is meant by those values.  The concept is there would be a (small) range of API query patterns in an attempt to keep the number of query parameters available to minimum and where possible limit the value options for those parameters to either a enumerated list or range of values which are supplied by the metadata responses from the API.  
+
+The Met Office has developed a basic prototype to test the proposed candidate specification, this prototype had two main aims:
+
+ - Demonstrate accessing data from a variety of datasources which include both Feature and Coverage types.
+
+ - Test the idea that users would be able to retrieve data with no information other than that provided by the OpenAPI definition of the candidate API specification and the metadata available from the API. 
+
+The prototype was limited to just the basic Point and Polygon queries with just one output format.  No attempt was made to make the prototype scalable as the focus was on providing access to a variety of datasources rather than query optimisation.
+
+The server was developed using python due to the wide range of software libraries available for accessing scientific datasources.  To simplify the deployment process the application was built as a docker container, resources provided for the container are limited (1 CPU core and <6Gb or ram) in order to help identify possible resource bottlenecks.
+
+One of the main aims of the candidate specification is to abstract the user from the underlying data structures, whilst providing a simple self describing query interface.  In the demo application the following underlying datasets were used as datasources to test the concept:
+
+- METAR Observation data (feature)
+- OpenStreetMap Highways data (feature)
+- Shuttle Radar Topography Mission (SRTM) Digital Elevation Model (DEM) data (coverage)
+- UK Met Office UKV Model (UKV) surface data (coverage)  
+- UK Met Office Global Model surface data (coverage)
+- NOAA Global Forecast System (GFS) 0.25 degree data (coverage)
+- NWS National Digital Forecast Database (NDFD) (coverage) 
+
+A variety of storage options were accessed with an aim to demonstrate the abstraction of the data structure and storage from the end user.  The UKV and NDFD data are stored as files on the server file system, the UK Global model files and Digital Elevation data are stored and accessed from Amazon S3 buckets; the GFS, Metar and OpenStreetMap data are accessed using various third party API's.
+
+As well as providing a simple to explain interface for the user the limited range of accepted input values for the query parameters helped to simplify the server implementation. The most complicated input parameters were the COORDS and time, but the use of Well Known Text (WKT) and ISO8601 standards meant it was possible to use existing software libraries for parsing and validation of those values. As the only valid inputs for the remaining parameters are values that are supplied in the metadata returned by the API, the validation code could rely a simple comparison to the expected value list.
+
+Another core principle of the candidate specification is to create an API which can be fully described by the OpenAPI 3.0 standard. This meant that it was possible to use off the shelf tools to produce developer friendly documentation, there are are also tools which will generate skeleton code in multiple languages; Those tools generate code which can query the API and parse the results returned, this proved very useful in testing that the implementation performed as described.
+
+
+
+[%header,cols=2*]
+|===
+|Content
+|Link
+
+|Candidate spec API - Feature endpoint
+|http://labs.metoffice.gov.uk/wotw/

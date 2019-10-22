@@ -77,3 +77,39 @@ The current MSC OGC API offering provides a flat list of collections.  Community
 === Complex Filtering
 
 By design, the OGC API - Features Core specification provides query capability via spatial, aspatial and temporal predicates.  More complex query capabilities (spatial operators [clip by polygon, etc.], comparisons [greater than, less than, etc.], as well as logical operators [And/Or/Not, etc.]) are required for more complex use cases.  This is best implemented as an extension that a given server can implement/conform to.
+
+== Met Office candidiate specification
+
+The candidate specification focuses on delivering a set of predefined queries, whose structure is based around the feature a user is trying to generate rather than how the data is stored.  The existing OGC standards are based on providing rich query capabilities to extract the information that the user requires from a datastore,  this is very powerful and can often allow user a similar level of access as they would have if the data was on their own system but requires both an understanding of the datastore and the various OGC standards used by the query.  
+
+The candidate specification relies on the data publisher to provide the query patterns which return their information as just a simplified array of data with a set of metadata which describe the meaning of the values, rather than using specialised data schemas to describe the data.  This will mean there will be a loss of some specialised data capabilities but at the benefit of making it much easier for data users to 'mash' information from multiple data sources to produce their data product.
+
+With a view to aligning with the existing OGC standards the intention is that the candidate specification will return its metadata with the same schema up to at least the level of collections as the WFS 3 api in order to make service discovery easier.  
+
+i.e. 
+
+http://www.example.org/wfs/collections
+
+http://www.example.org/wotw/collections
+
+should be parsable by the same code as the format of the returned data would be identical, but the structure of the metadata would diverge after that point.
+
+Other benefits to the query pattern approach are:
+
+Simplify interoperability by limiting the number of possible query combinations and results that are available for any particular API (this is usually handled by defining profiles with exiting standards).  
+
+The limited functionality of each individual query pattern should make it easier for vendors to implement, although they still have to handle to complexity of the data the query business logic can be much simpler.  They are able to choose which patterns they want to implement and still provide a compliant interface.   
+
+It should be easier to tune the cost/performance balance than the rich API's, limiting the functionality available via each query pattern mean  indexing, caching and other techniques for optimising performance or reducing cost are easier to structure. 
+
+=== Metadata
+
+For the candidate specification to work it will require a well structured approach to metadata that will be flexible enough to cope with both Feature and Coverage data types whilst not over complicating the returned results and not swamping the data response with metadata values.  The approach taken by CoverageJSON is to use JSON-LD and rely on registries to provide the detailed information, this linked data approach would keep the size of the metadata in the results to a minimum whilst providing the user access to as much (or as little) detail as the user requires to build a product.  It is not currently the intention to try an standardise the structure of the information that is stored in the registries, the concept being that information would be available for products using the data to access but it would require customisation of the product if it needs to interpret the richer detail that they provide dynamically,  this is working on a 80/20 principle that the majority of time the basic metadata available with the returned data would be good enough for most applications.
+
+This does create the need to develop a set of registries to host the detailed metadata, this could be done by each data publisher creating their own register to describe their data and for specialist types this will always be required.  It would be much more efficient for standard things such as units if there were centrally hosted common registries that could be used by all API's and registries to host domain specific information (such as Met Ocean code tables) but this would require identify owners to host the services and manage the information.
+
+=== CoverageJSON
+
+The candidate specification uses CoverageJSON as its default output, this JSON format is straightforward enough that it is not intimidating to users outside of the geospatial domain but has a rich enough structure to be able to describe data and metadata from both Coverage and Feature sources.  CoverageJSON is not currently owned or managed by any standards body and although implemented in tools such as the Hyrax OpenDAP server it is a relatively unknown format,  ideally CoverageJSON would be adopted and developed by the OGC to become a formal JSON schema for geospatial data.  Whilst there are improvements that could be made to improve the CoverageJSON structure it is essential that it keeps the right balance between the very open structure of GeoJSON and the very formal structure of the current GML based schemas of the existing OGC standards.
+
+The best approach where the API supports users who require schema validation would be for the API to provide a GML based results as one of the output format options rather than trying to extend the attributes of the CoverageJSON format which could be disconcerting to the wider audience.  This follows the principle behind the candidate specification is that it is the data publishers who convert the data into a simple format not the data consumer.
