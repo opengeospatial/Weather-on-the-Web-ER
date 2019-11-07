@@ -5,6 +5,19 @@
 ==== Background
 In December 2018, the MetOean DWG conducted a two day API workshop/hackathon event in Northern Virginia.  The goal of the workshop was to introduce the weather on the web data API work as a REST-based query pattern making use of the OpenAPI specification and discuss how the API tries to simplify the need to understand the OGC WCS standard or the need to know about Meteorological or Oceanographic terms.  That the API was simply a quick means to an end goal, the product.   Discussion topics included the URL request/response patterns, the query patterns, and user experiences making use of the demo APO.   The full agenda for the workshop/hackathon can be found [[here]].  Participants of the workshop included OGC staff, a number of Met Center Agencies, academia, and corporations. A complete listing of the participants can be found [[here]].
 
+Here are a couple of snapshots of the whiteboards during the event:
+
+.Conformance Class Layout
+[#img-Conformance%20Class%20layout]
+[caption="Figure 1: ", Conformance Class Layout]
+image::https://raw.githubusercontent.com/opengeospatial/Weather-on-the-Web-ER/master/images/Conformance%20Class%20layout.jpeg[Conformance Class Layout,600,400]
+
+
+.Query Pattern Mappings
+[#img-Query%20Pattern%20Mappings]
+[caption="Figure 2: ", Query Pattern Mappings]
+image::https://raw.githubusercontent.com/opengeospatial/Weather-on-the-Web-ER/master/images/Query%20Pattern%20Mappings.jpeg[Query Pattern Mappings,600,400]
+
 ==== What was achieved
 
 1.	Created a GitHub collaborative workspace environment for MetOcean API:   https://github.com/OGCMetOceanDWG/MetOceanAPI-Workshop 
