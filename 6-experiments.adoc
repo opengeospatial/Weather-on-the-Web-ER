@@ -3,29 +3,51 @@
 == Hackathons/Workshops
 === December 2018 Workshop/Hackathon in Northern Virginia
 ==== Background
-In December 2018, the MetOeaan DWG conducted a two day API workshop/hackathon event in Northern Virginia.  The goal of the workshop was to introduce the weather on the web data API work as a REST-based query pattern making use of the OpenAPI specification and discuss how the API tries to simplify the need to understand the OGC WCS standard or the need to know about Meteorological or Oceanographic terms.  That the API was simply a quick means to an end goal, the product.   Discussion topics included the URL request/response patterns, the query patterns, and user experiences making use of the demo APO.   The full agenda for the workshop/hackathon can be found [[here]].  Participants of the workshop included OGC staff, a number of Met Center Agencies, academia, and corporations. A complete listing of the participants can be found [[here]].
-==== What was acheived
-1.	Created a github collaborative workspace environment for MetOcean API:   https://github.com/OGCMetOceanDWG/MetOceanAPI-Workshop 
-2.	Demonstration of initial WOTW capability, focused on gridded data
+In December 2018, the MetOean DWG conducted a two day API workshop/hackathon event in Northern Virginia.  The goal of the workshop was to introduce the weather on the web data API work as a REST-based query pattern making use of the OpenAPI specification and discuss how the API tries to simplify the need to understand the OGC WCS standard or the need to know about Meteorological or Oceanographic terms.  That the API was simply a quick means to an end goal, the product.   Discussion topics included the URL request/response patterns, the query patterns, and user experiences making use of the demo APO.   The full agenda for the workshop/hackathon can be found [[here]].  Participants of the workshop included OGC staff, a number of Met Center Agencies, academia, and corporations. A complete listing of the participants can be found [[here]].
+
+==== What was achieved
+
+1.	Created a GitHub collaborative workspace environment for MetOcean API:   https://github.com/OGCMetOceanDWG/MetOceanAPI-Workshop 
+
+2.	Demonstration of initial WotW capability, focused on gridded data
+
 3.	OpenAPI demo endpoint independent testing (Canadian Centre for Meteorological and Environmental Prediction)
+ 
  a.	Successfully conducted first pass testing against a generic WFS 3.0 client library (OWSLib - https://github.com/geopython/OWSLib)
- b.	Provided recommendations to align closer to WFS 3.0 patterns in github: https://github.com/OGCMetOceanDWG/MetOceanAPI-Workshop/blob/master/api-review-comments.md
+ 
+ b.	Provided recommendations to align closer to WFS 3.0 patterns in GitHub: https://github.com/OGCMetOceanDWG/MetOceanAPI-Workshop/blob/master/api-review-comments.md
+
 4.	Initial cut at WOTW API conformance classes (See Conformance Class file)
- 1.	Core (0):  Use simple feature specification (point, line string, polygon).  How do we interpret this in terms of parameters?  How do we encode this?  Start value, end value, interval, Begin, end, enumeration.  This would be same for time and points.  CRS is fixed on 4326.  Parameter list would be a list of WMO vocabulary (Links to 2 Grib tables)
- 2.	Spatial (1):  required for start, stop, interval and enumeration.  Not required for start and stop.  Specify default for interpolation, vertical, time.  For cross section and corridors use line string terminology (harder case though).  
- 3.	Weather parameters (2): Use WFS as the basis for query parameters.  Create filter.  The API should be self describing and therefore advertise what parameters are available.  There will likely be restrictions to output encodes for Grib vs. json.
- 4.	Temporal (3);  Use MetOcean specification, Grib2, netCDF
- 5.	Measurements (4): 
- 6.	Interpolation (5): Must specify interpolation method per axis.  Must use well known method.  Specify default as nearest neighbor.  Work on other interpolations methods with vendors 
- 7.	Return(6): We inform.  Json, covjson, grib, netcdf, xml 
- 8.	Vendor Extras (7):  Outside of scope.
+ 
+ 4.1	Core (0):  Use simple feature specification (point, line string, polygon).  How do we interpret this in terms of parameters?  How do we encode this?  Start value, end value, interval, Begin, end, enumeration.  This would be same for time and points.  CRS is fixed on 4326.  Parameter list would be a list of WMO vocabulary (Links to 2 Grib tables)
+ 
+ 4.2	Spatial (1):  required for start, stop, interval and enumeration.  Not required for start and stop.  Specify default for interpolation, vertical, time.  For cross section and corridors use line string terminology (harder case though).  
+ 
+ 4.3	Weather parameters (2): Use WFS as the basis for query parameters.  Create filter.  The API should be self describing and therefore advertise what parameters are available.  There will likely be restrictions to output encodes for Grib vs. json.
+ 
+ 4.4	Temporal (3);  Use MetOcean specification, Grib2, netCDF
+ 
+ 4.5	Measurements (4): 
+ 
+ 4.6	Interpolation (5): Must specify interpolation method per axis.  Must use well known method.  Specify default as nearest neighbor.  Work on other interpolations methods with vendors 
+ 
+ 4.7	Return(6): We inform.  Json, covjson, grib, netcdf, xml 
+ 
+ 4.8	Vendor Extras (7):  Outside of scope.
+
 5.  Initial cut at supported MetOcean API geometry query types (See: query pattern mappings file)
- 1.	Point, point series
- 2.	Polygon
- 3.	Profile
- 4.	grid
- 5.	Corridor
- 6.	Trajectory
+ 
+ 5.1	Point, point series
+ 
+ 5.2	Polygon
+ 
+ 5.3 Profile
+ 
+ 5.4	grid
+ 
+ 5.5	Corridor
+ 
+ 5.6	Trajectory
 
 == Implementations
 
