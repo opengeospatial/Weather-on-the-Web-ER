@@ -15,64 +15,62 @@ ESRI have offered to host a two-day workshop (Dec. 5: Setup and Dec 6-7: worksho
 
 ●	Dec 5th Schedule
 
-○	8am - 12 noon → Setup of prototypes and material for presentation
+. ○	8am - 12 noon → Setup of prototypes and material for presentation
 
-○	12 noon - 1pm → Lunch break
+. ○	12 noon - 1pm → Lunch break
 
-○	1pm - 6 pm → APIs in MetOcean Community
+. ○	1pm - 6 pm → APIs in MetOcean Community
 
-■	Orientation/Context (Set of presentations)
+.. ■	Orientation/Context (Set of presentations)
 
-■	WOTW API
+.. ■	WOTW API
 
-●	Live Demonstration of WOTW
+... ●	Live Demonstration of WOTW
 
-●	Evaluation and feedback on the WOTW API
+... ●	Evaluation and feedback on the WOTW API
 
-●	How easy is to create a client software using this API
+... ●	How easy is to create a client software using this API
 
-●	What “Use Cases” are not included?
+... ●	What “Use Cases” are not included?
 
-●	A brief presentation to outline the scope and purpose of the WOTW API
+... ●	A brief presentation to outline the scope and purpose of the WOTW API
 
-●	Where does the WOTW API fit in with WFS3.0
+... ●	Where does the WOTW API fit in with WFS3.0
 
-●	Hackathon on WOTW
+... ●	Hackathon on WOTW
 
-■	WCS 2.1/CIS1.1 with MetOcean Profile
+.. ■	WCS 2.1/CIS1.1 with MetOcean Profile
 
-●	Live Demonstration of IBL implementation of WCS2.1/CIS 1.1
+... ●	Live Demonstration of IBL implementation of WCS2.1/CIS 1.1
 
-●	A brief overview of the design and purpose of WCS2.1 metOcean profile.
+... ●	A brief overview of the design and purpose of WCS2.1 metOcean profile.
 
-●	A live demonstration using the IBL implementation
+... ●	A live demonstration using the IBL implementation
 
-●	How easy is to create a client software using this API
+... ●	How easy is to create a client software using this API
 
-●	Broader discussion on mind set for moving to multi-dimensionality (4D WCS space).  Has anyone has implemented this outside of IBL?  How do 
-we alleviate concerns with implementation?  Should we create a “recipe” for implementation?  Should we put out cloud instance as prototype 
-design for folks to follow?
+... ●	Broader discussion on mind set for moving to multi-dimensionality (4D WCS space).  Has anyone has implemented this outside of IBL?  How do we alleviate concerns with implementation?  Should we create a “recipe” for implementation?  Should we put out cloud instance as prototype design for folks to follow?
 
 ●	Dec 6th schedule
 
-○	8am - noon → Hackathon sessions on WOTW API and WCS2.1/CIS1.1
+. ○	8am - noon → Hackathon sessions on WOTW API and WCS2.1/CIS1.1
 
-■	Build teams and set goals
+.. ■	Build teams and set goals
 
-○	12 noon - 1pm → Lunch break
+. ○	12 noon - 1pm → Lunch break
 
-○	1pm - 5pm → Continued Hackathon sessions
+. ○	1pm - 5pm → Continued Hackathon sessions
 
-○	5pm - 6pm → Report out on hackathon findings
+. ○	5pm - 6pm → Report out on hackathon findings
 
 ●	Dec 7th schedule
 
-○	8 - 12 noon → Continued Hackathon sessions and final report outs
+. ○	8 - 12 noon → Continued Hackathon sessions and final report outs
 
-○	12 noon - 1pm → Lunch break
+. ○	12 noon - 1pm → Lunch break
 
-○	1pm - 4pm → General discussion on two topics:
+. ○	1pm - 4pm → General discussion on two topics:
 
-●	Discussion on the applicability of each API to various uses e.g. interoperability with other WCS servers
+.. ●	Discussion on the applicability of each API to various uses e.g. interoperability with other WCS servers
 
-●	The OGC appetite for this approach?
+.. ●	The OGC appetite for this approach?
