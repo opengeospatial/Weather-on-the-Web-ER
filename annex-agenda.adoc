@@ -12,8 +12,7 @@ The OGC's WFS working group is supportive of this work and keen to be involved. 
 ESRI have offered to host a two-day workshop (Dec. 5: Setup and Dec 6-7: workshop) in their Crystal City, Virginia location the week before the next OGC meeting in Charlotte North Carolina (Dec 10th to 14th).  Remote participation will be supported.  The work will take the form of a hackathon and be open to all interested parties and the provisional results presented at the OGC meeting held the following week. 
 
 === Proposed Schedule and topics for the workshop
-
-●	Dec 5th Schedule
+●	*Dec 5th Schedule*
 
 . ○	8am - 12 noon → Setup of prototypes and material for presentation
 
@@ -51,7 +50,7 @@ ESRI have offered to host a two-day workshop (Dec. 5: Setup and Dec 6-7: worksho
 
 ... ●	Broader discussion on mind set for moving to multi-dimensionality (4D WCS space).  Has anyone has implemented this outside of IBL?  How do we alleviate concerns with implementation?  Should we create a “recipe” for implementation?  Should we put out cloud instance as prototype design for folks to follow?
 
-●	Dec 6th schedule
+●	*Dec 6th schedule*
 
 . ○	8am - noon → Hackathon sessions on WOTW API and WCS2.1/CIS1.1
 
@@ -63,7 +62,7 @@ ESRI have offered to host a two-day workshop (Dec. 5: Setup and Dec 6-7: worksho
 
 . ○	5pm - 6pm → Report out on hackathon findings
 
-●	Dec 7th schedule
+●	*Dec 7th schedule*
 
 . ○	8 - 12 noon → Continued Hackathon sessions and final report outs
 
