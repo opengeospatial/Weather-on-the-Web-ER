@@ -18,6 +18,6 @@ This 4-overview.adoc file helps the reader to better understand the various sect
 
 (( Section 8 provides a summary of the main findings and discusses links to other tasks such as WFS 3.0 in OGC and WMO. ))
 
-(( Section 9 proposesthe way forward and the future tasks. ))
+(( Section 9 proposes the way forward and the future tasks. ))
 
 (( Annex A provides code snippets that illustrate the functionality. ))
